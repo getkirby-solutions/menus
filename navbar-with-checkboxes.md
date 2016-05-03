@@ -25,5 +25,6 @@ Template
 
 Issues:
 
+- checkboxes just save a data value, not the page it self
 - checkboxes field won't reflect page changes because they're separate entities
 - changes like `uri`, `url`, won't be tracked

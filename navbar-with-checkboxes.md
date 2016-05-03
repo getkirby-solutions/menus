@@ -25,4 +25,5 @@ Template
 
 Issues:
 
-- `site.yml` won't reflect page changes, they're separate entities
+- checkboxes field won't reflect page changes because they're separate entities
+- changes like `uri`, `url`, won't be tracked

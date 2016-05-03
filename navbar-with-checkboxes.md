@@ -1,18 +1,19 @@
 # Navigation from panel checkboxes
 
-Panel checkboxes
+Site blueprint
 
 ```yaml
+# site.yml
 menu_primary:
   label: Show on top bar
   type: checkboxes
   options: children
 ```
 
-Checkboxes return a string
+Template
 
 ```php
-# template
+# Checkboxes return a string
 <?php foreach ($site->menu_primary()->split() as $item): ?>
 	<li>
 		<a class="transform-capitalize" href="<?php echo $pages->find($item)->url() ?>">
@@ -21,3 +22,7 @@ Checkboxes return a string
 	</li>
 <?php endforeach; ?>
 ```
+
+Issues:
+
+- `site.yml` won't fetch page changes, they're separate entities

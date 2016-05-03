@@ -5,7 +5,7 @@ Reference: nested menu: https://getkirby.com/docs/solutions/menus
 ```php
 # template.php
 <?php $items = $pages->visible(); ?>
-<?php	if($items->count()): ?>
+<?php if($items->count()): ?>
 	<nav>
 		<ul class="list-unstyled">
 			<!-- top pages -->

@@ -25,4 +25,4 @@ Template
 
 Issues:
 
-- `site.yml` won't fetch page changes, they're separate entities
+- `site.yml` won't reflect page changes, they're separate entities

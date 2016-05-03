@@ -13,7 +13,8 @@ menu_primary:
 Template
 
 ```php
-# Checkboxes return a string
+# checkboxes field returns a string
+# split() splits the field content into an array
 <?php foreach ($site->menu_primary()->split() as $item): ?>
 	<li>
 		<a class="transform-capitalize" href="<?php echo $pages->find($item)->url() ?>">

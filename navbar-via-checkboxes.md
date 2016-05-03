@@ -1,4 +1,4 @@
-# Navigation with checkboxes
+# Navigation via checkboxes
 
 Site blueprint
 

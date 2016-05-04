@@ -1,5 +1,6 @@
 # Site navigation tree
 
+Vertical menu with all top-level pages, and optional sub-pages, using unordered list  
 Reference: nested menu: https://getkirby.com/docs/solutions/menus
 
 ```php

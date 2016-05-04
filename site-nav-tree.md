@@ -15,7 +15,7 @@ Reference: nested menu: https://getkirby.com/docs/solutions/menus
 						<?php echo $pagePrimary->title()->html(); ?>
 					</a>
 					<!-- pageSecondary pages -->
-					<?php $pagesSecondary = $pagePrimary->pagesSecondary()->visible()->flip(); ?>
+					<?php $pagesSecondary = $pagePrimary->children()->visible()->flip(); ?>
 					<?php if($pagesSecondary->count()): ?>
 						<ul class="list-unstyled" style="margin-left:0.3rem;">
 							<?php $count = 1; ?>

@@ -2,7 +2,7 @@
 
 Reference: nested menu: https://getkirby.com/docs/solutions/menus
 
-```php
+```
 # template.php
 <?php $pagesPrimary = $pages->visible(); ?>
 <?php if($pagesPrimary->count()): ?>
@@ -16,7 +16,7 @@ Reference: nested menu: https://getkirby.com/docs/solutions/menus
 					</a>
 					<!-- pageSecondary pages -->
 					<?php $pagesSecondary = $pagePrimary->pagesSecondary()->visible()->flip(); ?>
-					<?php	 if($pagesSecondary->count()): ?>
+					<?php if($pagesSecondary->count()): ?>
 						<ul class="list-unstyled" style="margin-left:0.3rem;">
 							<?php $count = 1; ?>
 							<?php foreach($pagesSecondary as $pageSecondary): ?>

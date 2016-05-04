@@ -2,7 +2,7 @@
 
 Reference: nested menu: https://getkirby.com/docs/solutions/menus
 
-```
+```php
 # template.php
 <?php $pagesPrimary = $pages->visible(); ?>
 <?php if($pagesPrimary->count()): ?>

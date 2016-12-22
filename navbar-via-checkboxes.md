@@ -18,7 +18,7 @@ menuPrimary:
 Template/Snippet
 
 ```php
-<?php checkboxes field returns string, split() converts string into array ?>
+<?php # checkboxes field returns string, split() converts string into array ?>
 <?php if ($site->menuPrimary()->isNotEmpty()): ?>
   <ul class="<?php echo $listClass ?>">
     <?php if ($menuHashes = $site->menuPrimary()->split()): ?>

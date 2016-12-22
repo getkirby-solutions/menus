@@ -5,7 +5,6 @@ Site blueprint
 ```yaml
 # site.yml
 menuPrimary:
-menuPrimary:
   label: Menu
   type: checkboxes
   options: query

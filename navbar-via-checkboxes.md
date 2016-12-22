@@ -4,28 +4,42 @@ Site blueprint
 
 ```yaml
 # site.yml
-menu_primary:
-  label: Show on top bar
+menuPrimary:
+menuPrimary:
+  label: Menu
   type: checkboxes
-  options: children
+  options: query
+  query:
+    page: /
+    fetch: children
+    value: '{{hash}}'
+    text: '{{title}}'
 ```
 
 Template
 
 ```php
-# checkboxes field returns a string
-# split() splits the field content into an array
-<?php foreach ($site->menu_primary()->split() as $item): ?>
-	<li>
-		<a class="transform-capitalize" href="<?php echo $pages->find($item)->url() ?>">
-			<?php echo $pages->find($item)->uri() ?>
-		</a>
-	</li>
-<?php endforeach; ?>
+# checkboxes field returns string, split() converts string into array
+<?php if ($site->menuPrimary()->isNotEmpty()): ?>
+  <ul class="<?php echo $listClass ?>">
+    <?php if ($menuHashes = $site->menuPrimary()->split()): ?>
+      <?php foreach($menuHashes as $menuItemHash): ?>
+        <?php $menuPage = $pages->findBy('hash', $menuItemHash); ?>
+        <?php if ($menuPage->isVisible()): ?>
+          <li class="<?php echo $itemClass ?>">
+            <a class="<?php echo $linkClass ?>" href="<?php echo $menuPage->url(); ?>">
+              <?php echo $menuPage->title(); ?>
+            </a>
+          </li>
+        <?php endif; ?>
+      <?php endforeach; ?>
+    <?php endif; ?>
+  </ul>
+<?php endif; ?>
+
 ```
 
 Issues:
 
-- checkboxes just save a data value, not the page it self
-- checkboxes field won't reflect page changes because they're separate entities
+- checkboxes field won't reflect page changes
 - changes like `uri`, `url`, won't be tracked
